@@ -1,0 +1,20 @@
+
+body{
+    background-image: url(img/azul.jpg);
+    background-attachment: fixed;
+}
+
+#logo{
+    background-color: #15178b;
+}
+
+#menu ul li:hover{
+    background-color: #15178b;
+}
+
+.button-more{
+
+    background-color: #15178b;
+
+}
+
