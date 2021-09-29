@@ -73,7 +73,9 @@ $(document).ready(function(){
   $("#login form").submit(function () {
     let form_name = $("#form_name").val();
     localStorage.setItem("form_name",form_name);
-    window.open("perfil.html") /* Tiene que ir ahí */
+    
+    window.open("perfil.html")
+    window.close("/index.html")
   })
 
   var form_name = localStorage.getItem("form_name");
@@ -90,6 +92,7 @@ $(document).ready(function(){
     /* Cerrar sesión */
     $("#logout").click(function () { 
       window.open("index.html")   /* Tiene que ir ahí */
+      window.close("perfil.html")
       localStorage.clear();
       location.reload();
       
