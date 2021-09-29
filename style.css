@@ -91,10 +91,19 @@
 #sidebar{
     margin-left: 2rem;
     margin-top: 2rem;
+
 }
 
 #contenido{
     display: flex;
+    
+}
+
+#contenido_perfil{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 #sidebar{

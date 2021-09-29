@@ -1,13 +1,17 @@
 $(document).ready(function(){
+  if(window.location.href.indexOf("index")>-1){
     $(function(){
-        $('.bxslider').bxSlider({
-          mode: 'fade',
-          captions: true,
-          slideWidth: 1200
-        });
+      $('.bxslider').bxSlider({
+        mode: 'fade',
+        captions: true,
+        slideWidth: 1200
       });
+    });
+  }
+    
 
       //Post
+      if(window.location.href.indexOf("index")>-1){
   var posts = [
 
     {
@@ -42,7 +46,7 @@ $(document).ready(function(){
             $('#posts').append(post);
   });
 
-
+      }
   //Selector de tema
 
     var theme = $("#theme");
@@ -61,6 +65,37 @@ $(document).ready(function(){
       theme.attr("href","blue.css")
       alert('Esta wea cambio de tema a Azul')
     })
+
+
+    // ======= Login LocalStorage =======
+
+    /* Iniciar sesión */
+  $("#login form").submit(function () {
+    let form_name = $("#form_name").val();
+    localStorage.setItem("form_name",form_name);
+    window.open("perfil.html") /* Tiene que ir ahí */
+  })
+
+  var form_name = localStorage.getItem("form_name");
+ 
+
+  if(form_name != null && form_name != "undefined"){
+    
+    let about_parrafo = $("#about p");
+    $("#about p").html("<b>Bienvenido " + form_name + "</b>");
+    about_parrafo.append("<br><br><br><a href = '#' class='button-more' id='logout'>Cerrar sesión</a> ")
+    $("#login").hide();
+       
+
+    /* Cerrar sesión */
+    $("#logout").click(function () { 
+      window.open("index.html")   /* Tiene que ir ahí */
+      localStorage.clear();
+      location.reload();
+      
+    });
+
+  }
 
   });
 
